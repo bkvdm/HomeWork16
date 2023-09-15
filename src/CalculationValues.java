@@ -23,12 +23,13 @@ public class CalculationValues {
         }
         for (int i = 0; i < studentsFacultyGryffindor.length; i++) {
             if (i != markerBestStudentIndex && i != markerWorstStudentIndex) {
-            System.out.println(studentsFacultyGryffindor[markerBestStudentIndex].getName() + " лучше, чем " + studentsFacultyGryffindor[i].getName());
+                System.out.println(studentsFacultyGryffindor[markerBestStudentIndex].getName() + " лучше, чем " + studentsFacultyGryffindor[i].getName());
                 System.out.println(studentsFacultyGryffindor[i].getName() + " лучше, чем " + studentsFacultyGryffindor[markerWorstStudentIndex].getName());
             }
         }
 
     }
+
     public void calculationFacultyHufflepuff(FacultyHufflepuff[] studentsFacultyHufflepuff) {
         int maxSumFacultyCharacteristicsStudent = 0;
         Integer minSumFacultyCharacteristicsStudent = null;
@@ -82,8 +83,6 @@ public class CalculationValues {
                 System.out.println(studentsFacultyRavenclaw[i].getName() + " лучше, чем " + studentsFacultyRavenclaw[markerWorstStudentIndex].getName());
             }
         }
-
-
     }
 
     public void calculationFacultySlytherin(FacultySlytherin[] studentsFacultySlytherin) {
@@ -111,48 +110,24 @@ public class CalculationValues {
                 System.out.println(studentsFacultySlytherin[i].getName() + " лучше, чем " + studentsFacultySlytherin[markerWorstStudentIndex].getName());
             }
         }
-
-        public void compareAnyStudents(HogwartsStudent second) {
-            if (this.getMagicPower() > second.getMagicPower()) {
-                System.out.println(this.getName() + " is stronger than " + second.getName());
-            } else if (this.getMagicPower() == second.getMagicPower()) {
-                System.out.println(this.getName() + " is equal in power to " + second.getName());
-            } else {
-                System.out.println(second.getName() + " is stronger than " + this.getName());
-            }
-            if (this.getTransgressionDistance() > second.getTransgressionDistance()) {
-                System.out.println(this.getName() + " goes further than  " + second.getName());
-            } else if (this.getTransgressionDistance() == second.getTransgressionDistance()) {
-                System.out.println(this.getName() + " goes as far as " + second.getName());
-            } else {
-                System.out.println(second.getName() + " goes further than  " + this.getName());
-            }
-        }
-
     }
 
-}
+    public void compareAnyStudents(FacultyGryffindor harryPotter, FacultyGryffindor hermioneGranger) {
+            if (harryPotter.getPowerMagic() > hermioneGranger.getPowerMagic()) {
+                System.out.println(harryPotter.getName() + " магия сильнее, чем у " + hermioneGranger.getName());
+            } else if (harryPotter.getPowerMagic() == hermioneGranger.getPowerMagic()) {
+                System.out.println(harryPotter.getName() + " сила магии такая же, как у " + hermioneGranger.getName());
+            } else {
+                System.out.println(hermioneGranger.getName() + " магия сильнее, чем у " + harryPotter.getName());
+            }
+            if (harryPotter.getDistanceTransgression() > hermioneGranger.getDistanceTransgression()) {
+                System.out.println(harryPotter.getName() + " трансгрессия идёт дальше, чем у " + hermioneGranger.getName());
+            } else if (harryPotter.getDistanceTransgression() == hermioneGranger.getDistanceTransgression()) {
+                System.out.println(harryPotter.getName() + " трансгрессия равна трансгрессии " + hermioneGranger.getName());
+            } else {
+                System.out.println(hermioneGranger.getName() + " трансгрессия идёт дальше, чем у " + harryPotter.getName());
+            }
+        }
+    }
 
-
-//    public void calculationSchoolHogwarts(FacultyGryffindor[] studentsFacultyGryffindor, FacultyHufflepuff[] studentsFacultyHufflepuff, FacultyRavenclaw[] studentsFacultyRavenclaw, FacultySlytherin[] studentsFacultySlytherin) {
-//        int numberStudents = studentsFacultyGryffindor.length + studentsFacultyHufflepuff.length + studentsFacultyRavenclaw.length + studentsFacultySlytherin.length;
-//        Object[] studentSchoolHogwarts = new Object[numberStudents];
-//        for (int i = 0; i < studentsFacultyGryffindor.length; i++) {
-//            studentSchoolHogwarts[i] = studentsFacultyGryffindor[i];
-//        }
-//        int countIndexStudentSchoolHogwarts = studentSchoolHogwarts.length - studentsFacultyGryffindor.length;
-//        for (int i = 0; i < studentsFacultyHufflepuff.length; i++) {
-//            studentSchoolHogwarts[countIndexStudentSchoolHogwarts + i] = studentsFacultyHufflepuff[i];
-//        }
-//        countIndexStudentSchoolHogwarts = studentSchoolHogwarts.length - studentsFacultyGryffindor.length - studentsFacultyHufflepuff.length;
-//        for (int i = 0; i < studentsFacultyRavenclaw.length; i++) {
-//            studentSchoolHogwarts[countIndexStudentSchoolHogwarts + i] = studentsFacultyRavenclaw[i];
-//        }
-//        countIndexStudentSchoolHogwarts = studentSchoolHogwarts.length - studentsFacultyGryffindor.length - studentsFacultyHufflepuff.length - studentsFacultyRavenclaw.length;
-//        for (int i = 0; i < studentsFacultySlytherin.length; i++) {
-//            studentSchoolHogwarts[countIndexStudentSchoolHogwarts + i] = studentsFacultySlytherin[i];
-//        }
-//        System.out.println("Arrays.toString(studentSchoolHogwarts) = " + Arrays.toString(studentSchoolHogwarts));
-//    }
-//}
 
