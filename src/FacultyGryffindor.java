@@ -37,9 +37,13 @@ public class FacultyGryffindor extends SchoolHogwarts{
     @Override
     public String toString() {
         return "FacultyGryffindor{" +
+                "name=" + getName() +
+                "PowerMagic=" + getPowerMagic() +
+                "getDistanceTransgression=" + getDistanceTransgression() +
                 "nobility=" + nobility +
                 ", bravery=" + bravery +
                 ", honor=" + honor +
                 '}';
     }
+
 }

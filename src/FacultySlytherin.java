@@ -57,6 +57,9 @@ public class FacultySlytherin extends SchoolHogwarts{
     @Override
     public String toString() {
         return "FacultySlytherin{" +
+                "name=" + getName() +
+                "PowerMagic=" + getPowerMagic() +
+                "getDistanceTransgression=" + getDistanceTransgression() +
                 "cunning=" + cunning +
                 ", determination=" + determination +
                 ", ambition=" + ambition +

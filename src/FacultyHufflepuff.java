@@ -37,6 +37,9 @@ public class FacultyHufflepuff extends SchoolHogwarts{
     @Override
     public String toString() {
         return "FacultyHufflepuff{" +
+                "name=" + getName() +
+                "PowerMagic=" + getPowerMagic() +
+                "getDistanceTransgression=" + getDistanceTransgression() +
                 "hardWork=" + hardWork +
                 ", honesty=" + honesty +
                 ", loyalty=" + loyalty +

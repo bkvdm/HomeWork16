@@ -35,5 +35,14 @@ public class Main {
         printService.print(studentsFacultyHufflepuff);
         printService.print(studentsFacultyRavenclaw);
         printService.print(studentsFacultySlytherin);
+
+        CalculationValues calculationValues = new CalculationValues();
+        calculationValues.calculationFacultyGryffindor(studentsFacultyGryffindor);
+        calculationValues.calculationFacultyHufflepuff(studentsFacultyHufflepuff);
+        calculationValues.calculationFacultyRavenclaw(studentsFacultyRavenclaw);
+        calculationValues.calculationFacultySlytherin(studentsFacultySlytherin);
+//        calculationValues.calculationSchoolHogwarts(studentsFacultyGryffindor, studentsFacultyHufflepuff, studentsFacultyRavenclaw, studentsFacultySlytherin);
+
     }
+    hermione.compareAnyStudents(ron);
 }

@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class PrintService {
     public void print(FacultyGryffindor[] studentsFacultyGryffindor) {
         System.out.println("studentsFacultyGryffindor.length = " + studentsFacultyGryffindor.length);
@@ -53,6 +55,7 @@ public class PrintService {
             System.out.println("facultySlytherin.getAmbition() = " + facultySlytherin.getAmbition());
             System.out.println("facultySlytherin.getLustPower() = " + facultySlytherin.getLustPower());
         }
-        System.out.println();
+        System.out.println("/");
+        System.out.println("Arrays.toString(studentsFacultySlytherin) = " + Arrays.toString(studentsFacultySlytherin));
     }
 }
