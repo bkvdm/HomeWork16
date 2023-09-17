@@ -1,4 +1,4 @@
-public class FacultyGryffindor extends SchoolHogwarts{
+public class FacultyGryffindor extends SchoolHogwarts {
     private int nobility;
     private int bravery;
     private int honor;
@@ -36,14 +36,39 @@ public class FacultyGryffindor extends SchoolHogwarts{
 
     @Override
     public String toString() {
-        return "FacultyGryffindor{" +
-                "name=" + getName() +
-                "PowerMagic=" + getPowerMagic() +
-                "getDistanceTransgression=" + getDistanceTransgression() +
-                "nobility=" + nobility +
-                ", bravery=" + bravery +
-                ", honor=" + honor +
-                '}';
+        return "Факультет Гриффиндор." +
+                " Имя: " + getName() +
+                ", сила магии: " + getPowerMagic() +
+                ", расстояние трансгрессии: " + getDistanceTransgression() +
+                ", благородство: " + nobility +
+                ", храбрость: " + bravery +
+                ", честь: " + honor;
     }
 
+    public static void calculationFacultyGryffindor(FacultyGryffindor[] studentsFacultyGryffindor) {
+        int maxSumFacultyCharacteristicsStudent = 0;
+        Integer minSumFacultyCharacteristicsStudent = null;
+        Integer markerBestStudentIndex = null;
+        Integer markerWorstStudentIndex = null;
+        for (int i = 0; i < studentsFacultyGryffindor.length; i++) {
+            int sumFacultyCharacteristicsStudent = studentsFacultyGryffindor[i].getNobility() + studentsFacultyGryffindor[i].getBravery() + studentsFacultyGryffindor[i].getHonor();
+            if (sumFacultyCharacteristicsStudent > maxSumFacultyCharacteristicsStudent) {
+                maxSumFacultyCharacteristicsStudent = sumFacultyCharacteristicsStudent;
+                markerBestStudentIndex = i;
+            }
+        }
+        for (int i = 0; i < studentsFacultyGryffindor.length; i++) {
+            int sumFacultyCharacteristicsStudent = studentsFacultyGryffindor[i].getNobility() + studentsFacultyGryffindor[i].getBravery() + studentsFacultyGryffindor[i].getHonor();
+            if (minSumFacultyCharacteristicsStudent == null || sumFacultyCharacteristicsStudent < minSumFacultyCharacteristicsStudent) {
+                minSumFacultyCharacteristicsStudent = sumFacultyCharacteristicsStudent;
+                markerWorstStudentIndex = i;
+            }
+        }
+        for (int i = 0; i < studentsFacultyGryffindor.length; i++) {
+            if (i != markerBestStudentIndex && i != markerWorstStudentIndex) {
+                System.out.println(studentsFacultyGryffindor[markerBestStudentIndex].getName() + " лучше, чем " + studentsFacultyGryffindor[i].getName());
+                System.out.println(studentsFacultyGryffindor[i].getName() + " лучше, чем " + studentsFacultyGryffindor[markerWorstStudentIndex].getName());
+            }
+        }
+    }
 }

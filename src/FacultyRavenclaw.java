@@ -1,4 +1,4 @@
-public class FacultyRavenclaw extends SchoolHogwarts{
+public class FacultyRavenclaw extends SchoolHogwarts {
     private int mind;
     private int wisdom;
     private int wit;
@@ -46,14 +46,40 @@ public class FacultyRavenclaw extends SchoolHogwarts{
 
     @Override
     public String toString() {
-        return "FacultyRavenclaw{" +
-                "name=" + getName() +
-                "PowerMagic=" + getPowerMagic() +
-                "getDistanceTransgression=" + getDistanceTransgression() +
-                "mind=" + mind +
-                ", wisdom=" + wisdom +
-                ", wit=" + wit +
-                ", creation=" + creation +
-                '}';
+        return "Факультет Когтевран." +
+                " Имя: " + getName() +
+                ", сила магии: " + getPowerMagic() +
+                ", расстояние трансгрессии: " + getDistanceTransgression() +
+                ", ум: " + mind +
+                ", мудрость: " + wisdom +
+                ", остроумие: " + wit +
+                ", творчество: " + creation;
+    }
+
+    public static void calculationFacultyRavenclaw(FacultyRavenclaw[] studentsFacultyRavenclaw) {
+        int maxSumFacultyCharacteristicsStudent = 0;
+        Integer minSumFacultyCharacteristicsStudent = null;
+        Integer markerBestStudentIndex = null;
+        Integer markerWorstStudentIndex = null;
+        for (int i = 0; i < studentsFacultyRavenclaw.length; i++) {
+            int sumFacultyCharacteristicsStudent = studentsFacultyRavenclaw[i].getMind() + studentsFacultyRavenclaw[i].getWisdom() + studentsFacultyRavenclaw[i].getWit() + studentsFacultyRavenclaw[i].getCreation();
+            if (sumFacultyCharacteristicsStudent > maxSumFacultyCharacteristicsStudent) {
+                maxSumFacultyCharacteristicsStudent = sumFacultyCharacteristicsStudent;
+                markerBestStudentIndex = i;
+            }
+        }
+        for (int i = 0; i < studentsFacultyRavenclaw.length; i++) {
+            int sumFacultyCharacteristicsStudent = studentsFacultyRavenclaw[i].getMind() + studentsFacultyRavenclaw[i].getWisdom() + studentsFacultyRavenclaw[i].getWit() + studentsFacultyRavenclaw[i].getCreation();
+            if (minSumFacultyCharacteristicsStudent == null || sumFacultyCharacteristicsStudent < minSumFacultyCharacteristicsStudent) {
+                minSumFacultyCharacteristicsStudent = sumFacultyCharacteristicsStudent;
+                markerWorstStudentIndex = i;
+            }
+        }
+        for (int i = 0; i < studentsFacultyRavenclaw.length; i++) {
+            if (i != markerBestStudentIndex && i != markerWorstStudentIndex) {
+                System.out.println(studentsFacultyRavenclaw[markerBestStudentIndex].getName() + " лучше, чем " + studentsFacultyRavenclaw[i].getName());
+                System.out.println(studentsFacultyRavenclaw[i].getName() + " лучше, чем " + studentsFacultyRavenclaw[markerWorstStudentIndex].getName());
+            }
+        }
     }
 }

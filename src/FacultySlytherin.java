@@ -1,4 +1,4 @@
-public class FacultySlytherin extends SchoolHogwarts{
+public class FacultySlytherin extends SchoolHogwarts {
     private int cunning;
     private int determination;
     private int ambition;
@@ -56,15 +56,41 @@ public class FacultySlytherin extends SchoolHogwarts{
 
     @Override
     public String toString() {
-        return "FacultySlytherin{" +
-                "name=" + getName() +
-                "PowerMagic=" + getPowerMagic() +
-                "getDistanceTransgression=" + getDistanceTransgression() +
-                "cunning=" + cunning +
-                ", determination=" + determination +
-                ", ambition=" + ambition +
-                ", resourcefulness=" + resourcefulness +
-                ", lustPower=" + lustPower +
-                '}';
+        return "Факультет Слизерин." +
+                " Имя: " + getName() +
+                ", сила магии: " + getPowerMagic() +
+                ", расстояние трансгрессии: " + getDistanceTransgression() +
+                ", хитрость: " + cunning +
+                ", решительность: " + determination +
+                ", амбициозность: " + ambition +
+                ", находчивость: " + resourcefulness +
+                ", жажда власти: " + lustPower;
+    }
+
+    public static void calculationFacultySlytherin(FacultySlytherin[] studentsFacultySlytherin) {
+        int maxSumFacultyCharacteristicsStudent = 0;
+        Integer minSumFacultyCharacteristicsStudent = null;
+        Integer markerBestStudentIndex = null;
+        Integer markerWorstStudentIndex = null;
+        for (int i = 0; i < studentsFacultySlytherin.length; i++) {
+            int sumFacultyCharacteristicsStudent = studentsFacultySlytherin[i].getCunning() + studentsFacultySlytherin[i].getDetermination() + studentsFacultySlytherin[i].getAmbition() + studentsFacultySlytherin[i].getResourcefulness() + studentsFacultySlytherin[i].getLustPower();
+            if (sumFacultyCharacteristicsStudent > maxSumFacultyCharacteristicsStudent) {
+                maxSumFacultyCharacteristicsStudent = sumFacultyCharacteristicsStudent;
+                markerBestStudentIndex = i;
+            }
+        }
+        for (int i = 0; i < studentsFacultySlytherin.length; i++) {
+            int sumFacultyCharacteristicsStudent = studentsFacultySlytherin[i].getCunning() + studentsFacultySlytherin[i].getDetermination() + studentsFacultySlytherin[i].getAmbition() + studentsFacultySlytherin[i].getResourcefulness() + studentsFacultySlytherin[i].getLustPower();
+            if (minSumFacultyCharacteristicsStudent == null || sumFacultyCharacteristicsStudent < minSumFacultyCharacteristicsStudent) {
+                minSumFacultyCharacteristicsStudent = sumFacultyCharacteristicsStudent;
+                markerWorstStudentIndex = i;
+            }
+        }
+        for (int i = 0; i < studentsFacultySlytherin.length; i++) {
+            if (i != markerBestStudentIndex && i != markerWorstStudentIndex) {
+                System.out.println(studentsFacultySlytherin[markerBestStudentIndex].getName() + " лучше, чем " + studentsFacultySlytherin[i].getName());
+                System.out.println(studentsFacultySlytherin[i].getName() + " лучше, чем " + studentsFacultySlytherin[markerWorstStudentIndex].getName());
+            }
+        }
     }
 }

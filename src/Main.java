@@ -34,25 +34,39 @@ public class Main {
 
         FacultySlytherin[] studentsFacultySlytherin = {zhouChang, padmaPatil, marcusBelby};
 
-        PrintService printService = new PrintService();
-        printService.print(studentsFacultyGryffindor);
-        printService.print(studentsFacultyHufflepuff);
-        printService.print(studentsFacultyRavenclaw);
-        printService.print(studentsFacultySlytherin);
-
-        CalculationValues calculationValues = new CalculationValues();
+        System.out.println("Описание студентов школы Хогварда.");
+        for (FacultyGryffindor student : studentsFacultyGryffindor) {
+            System.out.println(student.toString());
+        }
+        for (FacultyHufflepuff student : studentsFacultyHufflepuff) {
+            System.out.println(student.toString());
+        }
+        for (FacultyRavenclaw student : studentsFacultyRavenclaw) {
+            System.out.println(student.toString());
+        }
+        for (FacultySlytherin student : studentsFacultySlytherin) {
+            System.out.println(student.toString());
+        }
+        System.out.println("Общая численность: " + (studentsFacultyGryffindor.length + studentsFacultyHufflepuff.length + studentsFacultyRavenclaw.length + studentsFacultySlytherin.length));
+        System.out.println();
+        System.out.println("Cравнение всех студентов по общим, для всех факультетов школы Хогварда, характеристикам:");
+        SchoolHogwarts.compareAnyStudents(harryPotter, hermioneGranger);
+        SchoolHogwarts[] studentSchoolHogwarts = {harryPotter, hermioneGranger, ronWeasley, dracoMalfoy, grahamMontague, gregoryGoyle, zachariahSmith, cedricDiggory, justinFinchFletchley, zhouChang, padmaPatil, marcusBelby};
+        for (int i = 0; i < studentSchoolHogwarts.length; i++) {
+            int studentComparisonIndex = i;
+            for (int k = studentComparisonIndex + 1; k < studentSchoolHogwarts.length; k++) {
+                SchoolHogwarts.compareAnyStudents(studentSchoolHogwarts[studentComparisonIndex], studentSchoolHogwarts[k]);
+            }
+        }
         System.out.println();
         System.out.println("Сравнение характеристик студентов школы Хогварда:");
         System.out.println("факультет Гриффиндор:");
-        calculationValues.calculationFacultyGryffindor(studentsFacultyGryffindor);
+        FacultyGryffindor.calculationFacultyGryffindor(studentsFacultyGryffindor);
         System.out.println("факультет Пуффендуй:");
-        calculationValues.calculationFacultyHufflepuff(studentsFacultyHufflepuff);
+        FacultyHufflepuff.calculationFacultyHufflepuff(studentsFacultyHufflepuff);
         System.out.println("факультет Когтевран:");
-        calculationValues.calculationFacultyRavenclaw(studentsFacultyRavenclaw);
+        FacultyRavenclaw.calculationFacultyRavenclaw(studentsFacultyRavenclaw);
         System.out.println("факультет Слизерин:");
-        calculationValues.calculationFacultySlytherin(studentsFacultySlytherin);
-        System.out.println();
-        System.out.println("Cравнение двух студентов по общим, для всех факультетов школы Хогварда, характеристикам:");
-        calculationValues.compareAnyStudents(harryPotter, hermioneGranger);
+        FacultySlytherin.calculationFacultySlytherin(studentsFacultySlytherin);
     }
 }
