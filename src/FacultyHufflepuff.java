@@ -36,13 +36,39 @@ public class FacultyHufflepuff extends SchoolHogwarts{
 
     @Override
     public String toString() {
-        return "FacultyHufflepuff{" +
-                "name=" + getName() +
-                "PowerMagic=" + getPowerMagic() +
-                "getDistanceTransgression=" + getDistanceTransgression() +
-                "hardWork=" + hardWork +
-                ", honesty=" + honesty +
-                ", loyalty=" + loyalty +
-                '}';
+        return "Факультет Пуффендуй." +
+                " Имя: " + getName() +
+                ", сила магии: " + getPowerMagic() +
+                ", расстояние трансгрессии: " + getDistanceTransgression() +
+                ", трудолюбие: " + hardWork +
+                ", честность: " + honesty +
+                ", верность: " + loyalty;
+    }
+
+    public static void calculationFacultyHufflepuff(FacultyHufflepuff[] studentsFacultyHufflepuff) {
+        int maxSumFacultyCharacteristicsStudent = 0;
+        Integer minSumFacultyCharacteristicsStudent = null;
+        Integer markerBestStudentIndex = null;
+        Integer markerWorstStudentIndex = null;
+        for (int i = 0; i < studentsFacultyHufflepuff.length; i++) {
+            int sumFacultyCharacteristicsStudent = studentsFacultyHufflepuff[i].getHardWork() + studentsFacultyHufflepuff[i].getHonesty() + studentsFacultyHufflepuff[i].getLoyalty();
+            if (sumFacultyCharacteristicsStudent > maxSumFacultyCharacteristicsStudent) {
+                maxSumFacultyCharacteristicsStudent = sumFacultyCharacteristicsStudent;
+                markerBestStudentIndex = i;
+            }
+        }
+        for (int i = 0; i < studentsFacultyHufflepuff.length; i++) {
+            int sumFacultyCharacteristicsStudent = studentsFacultyHufflepuff[i].getHardWork() + studentsFacultyHufflepuff[i].getHonesty() + studentsFacultyHufflepuff[i].getLoyalty();
+            if (minSumFacultyCharacteristicsStudent == null || sumFacultyCharacteristicsStudent < minSumFacultyCharacteristicsStudent) {
+                minSumFacultyCharacteristicsStudent = sumFacultyCharacteristicsStudent;
+                markerWorstStudentIndex = i;
+            }
+        }
+        for (int i = 0; i < studentsFacultyHufflepuff.length; i++) {
+            if (i != markerBestStudentIndex && i != markerWorstStudentIndex) {
+                System.out.println(studentsFacultyHufflepuff[markerBestStudentIndex].getName() + " лучше, чем " + studentsFacultyHufflepuff[i].getName());
+                System.out.println(studentsFacultyHufflepuff[i].getName() + " лучше, чем " + studentsFacultyHufflepuff[markerWorstStudentIndex].getName());
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-public class SchoolHogwarts extends Student{
+public class SchoolHogwarts extends Student {
 
     private int powerMagic;
     private int distanceTransgression;
@@ -32,5 +32,22 @@ public class SchoolHogwarts extends Student{
                 "powerMagic=" + powerMagic +
                 ", distanceTransgression=" + distanceTransgression +
                 '}';
+    }
+
+    public static void compareAnyStudents(SchoolHogwarts studentOne, SchoolHogwarts studentTwo) {
+        if (studentOne.getPowerMagic() > studentTwo.getPowerMagic()) {
+            System.out.println(studentOne.getName() + " магия сильнее, чем у " + studentTwo.getName());
+        } else if (studentOne.getPowerMagic() == studentTwo.getPowerMagic()) {
+            System.out.println(studentOne.getName() + " сила магии такая же, как у " + studentTwo.getName());
+        } else {
+            System.out.println(studentTwo.getName() + " магия сильнее, чем у " + studentOne.getName());
+        }
+        if (studentOne.getDistanceTransgression() > studentTwo.getDistanceTransgression()) {
+            System.out.println(studentOne.getName() + " трансгрессия идёт дальше, чем у " + studentTwo.getName());
+        } else if (studentOne.getDistanceTransgression() == studentTwo.getDistanceTransgression()) {
+            System.out.println(studentOne.getName() + " трансгрессия равна трансгрессии " + studentTwo.getName());
+        } else {
+            System.out.println(studentTwo.getName() + " трансгрессия идёт дальше, чем у " + studentOne.getName());
+        }
     }
 }
